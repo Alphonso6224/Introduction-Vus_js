@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- :::::::::: Importation de VueJs :::::::::: -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Exercice VueJs</title>
+
+
+    <!-- :::::::::: Style.CSS :::::::::: -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #100101db;
+            height: 100vh;
+        }
+
+        /* #root {
+            height: 100vh;
+        } */
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            background-color: #a5958f;
+            width: 415px;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow:  -3px -2px 2px 2px #e3e9eb,
+                         -8px 2px 2px 0px #918787,
+                          0 0 2px white;
+        }
+
+        form,
+        label,
+        span {
+            margin-left: 0.5rem;
+        }
+
+        form>h2 {
+            align-self: center;
+            font-size: 2rem;
+        }
+
+        form>div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        form>div>input {
+            border-radius: 5px;
+            border: 1px solid black;
+            height: 30px;
+        }
+
+        form>button {
+            height: 30px;
+            width: 50%;
+            border-radius: 5px;
+            border: 1px;
+            align-self: center;
+            background-color: #100101db;
+            color: #e8e3e1;
+        }
+
+        /* form>button:hover {
+            background-color: #100101db;
+            color: #f8ebe7;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        // <!-- Créer un objet data --> // 
+        // <!-- Relier l'objet data avec le formulaire --> // 
+        // <!-- Afficher le contenu des inputs dans les span correspondants --> 
+        const vue = new Vue({
+            el: '#root',
+            template: `
+            <div>
+                <form action="" method="POST">
+                    <h2>Sign in</h2>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" v-model="email">
+                        <span class="email">emailValue: {{email}}</span>
+                    </div>
+                    <div>
+                        <label for="pass">Password</label>
+                        <input type="password" id="pass" v-model="password">
+                        <span class="password">Password: {{password}}</span>
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" v-model="tel">
+                        <span class="phone">telephoneValue: {{tel}}</span>
+                    </div>
+                    <button type="submit" v-if="visible">Submit</button>
+                </form>
+            </div>
+            `,
+            data: {
+                email: "",
+                password: "",
+                tel: "",
+                visible: false,
+            },
+        });
+    </script>
+    ```
+</body>
+
+</html>
