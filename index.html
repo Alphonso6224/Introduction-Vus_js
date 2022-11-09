@@ -4,12 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ::::::::::::::::: Importation de VueJs dans le projet ::::::::::::::::::-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
     <title>Vue_Js</title>
 </head>
 <body>
-    <div>
-        <h1>Hello Vue !</h1>
-    </div>
+    <!-- :::: Instance racine qui va comporter l'instance vue.js :::: -->
+    <div id="app"></div>
+
+    <!-- Instance un objet vue qui nous permettra d'avoirtoutes les fonctionnalités associés -->
+    <script>
+        const vue = new Vue({
+            el: "#app", // el --> option utilisé pour lier la div avec l'id #app
+            template: `
+                <div>
+                    <h1>Hello {{user}}</h1>
+                    <h2>{{msg}}</h2>
+                    <div>
+                        <input type="text" placeholder="Entrez votre nom" v-model="input">  
+                        <button>SEND</button>  
+                    </div>
+                    <p>Input value: {{input}}</p>
+                </div>
+            `,
+            /* :::: template --> option utilisée pour devenir le markup (html) de la page.
+                Le template ne doit avoir qu'un seul parent ::::*/
+            data: {
+                user: "Vue !",
+                msg: "We are the best",
+                input: "",
+            },
+            /* :::: data --> option permet de stocker toutes les données que nous voulons (mais très souvent des données utiles dans notre document html) ::::*/
+        }); // Instancie un objet vue;
+
+        /* ::::
+            Directive VUE --> c'est un mot clé que l'on écrit dans le html et qui permet de demander à Vue d'effectuer des actions précises. La plupart commencent par v- ( v de vue);
+             v-model --> directive qui permet àvue de prendre la valeur dans un champ de saisie et de la stocker dans une variable;
+
+             v-text --> directive qui demande à vue d'interpoler le texte contenu dans la variable qu'on lui fourni littéralement (sans tenir compte des balises);
+
+             v-html --> directive qui demande à vue d'interpoler le texte contenu dans la variable qu'on lui fourni tout en considérant les tags ;
+        ::::: */
+
+
+    </script>
 </body>
 </html>
