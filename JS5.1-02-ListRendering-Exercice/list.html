@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>List</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        new Vue({
+            template: `
+            <div>
+                <div class="container mt-3">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th v-for="el in entete">{{el}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="el of arr">
+                            <td>{{el.lastname}}</td>
+                            <td>{{el.firstname}}</td>
+                            <td>{{el.email}}</td>
+                            <td>{{el.age}}</td>
+                            </tr>
+                        </tbody>    
+                    </table>
+                </div>
+            </div>
+        `,
+            // <!-- Créer un objet data contenant un tableau simple et un tableau composé d'objet  -->
+            data: {
+                arr: [
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                    { firstname: "John", lastname: "DOE", email:"john@example.com", age: 56 },
+                    {firstname: "Mary", lastname: "	Moe", email:"mary@example.com", age: 46},
+                    {firstname: "July", lastname: "	Dooley", email:"july@example.com", age: 86},
+                ],
+                entete:{
+                    fname:"Firstname",
+                    lname:"Lastname",
+                    emai:"Email",
+                    age:"Age",
+                },
+            }
+
+            // <!-- Afficher les éléments de l'objet data dans des listes et tables   -->
+        }).$mount("#root");
+    </script>
+</body>
+
+</html>

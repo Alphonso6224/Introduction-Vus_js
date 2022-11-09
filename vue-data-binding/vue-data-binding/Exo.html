@@ -78,6 +78,11 @@
             background-color: #100101db;
             color: #f8ebe7;
         } */
+        div>div {
+            background-color: white;
+            width: 500px;
+            /* padding: 2px; */
+        }
     </style>
 </head>
 
@@ -110,6 +115,17 @@
                     </div>
                     <button type="submit" v-if="visible">Submit</button>
                 </form>
+                <div>
+                    <h2>Directive v-for pour les tableaux</h2>
+                    <ul>
+                        <li v-for="element of arr">{{element}}</li>
+                    </ul>
+                    
+                    <h2>Directive v-for (in) pour les objet</h2>
+                    <ol>
+                        <li v-for="element in objet">{{element}}</li>
+                    </ol>
+                </div
             </div>
             `,
             data: {
@@ -117,6 +133,12 @@
                 password: "",
                 tel: "",
                 visible: false,
+                arr: ['Tâche 1', 'Tâche 2', 'Tâche 3', 'Tâche 4'],
+                objet:{
+                    firstname: "John",
+                    lastname: "DOE",
+                    age: 32
+                }
             },
         });
     </script>
